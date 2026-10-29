@@ -1,0 +1,642 @@
+:root {
+  --section-blue: #536b94;
+  --section-muted: #646b76;
+}
+
+.page-container {
+  width: min(100% - 48px, 1280px);
+  margin-inline: auto;
+}
+
+.services-section {
+  padding-block: 74px 84px;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 48px;
+}
+
+.section-eyebrow {
+  margin: 0 0 10px;
+  color: var(--red);
+  font-size: 19px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.section-heading h2 {
+  max-width: 630px;
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(29px, 3.2vw, 42px);
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  text-transform: capitalize;
+}
+
+.section-intro {
+  color: #33343b;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.section-intro p {
+  margin: 0 0 14px;
+}
+
+.service-grid {
+  display: grid;
+  margin-top: 68px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.service-card,
+.distribution-card {
+  min-width: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(24, 27, 35, 0.13);
+  text-align: center;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.service-card {
+  min-height: 242px;
+  padding: 28px 24px 24px;
+}
+
+.service-icon,
+.distribution-icon {
+  width: 43px;
+  height: 43px;
+  color: var(--red);
+}
+
+.service-card h3,
+.distribution-card h3 {
+  margin: 14px 0 9px;
+  color: var(--red);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.service-card p,
+.distribution-card p {
+  margin: 0;
+  color: #282b32;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.artists-section {
+  padding-block: 50px;
+  color: #fff;
+  background: var(--section-blue);
+}
+
+.artists-heading {
+  display: grid;
+  margin-bottom: 36px;
+  align-items: start;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 48px;
+}
+
+.artists-heading h2 {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 3vw, 38px);
+  letter-spacing: -1px;
+}
+
+.artists-heading p {
+  max-width: 760px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 18px;
+}
+
+.artist-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  color: #252733;
+  background: #fff;
+  box-shadow: 0 5px 14px rgba(16, 29, 49, 0.12);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.artist-photo {
+  position: relative;
+  display: grid;
+  width: 120px;
+  height: 120px;
+  margin: 18px auto 0;
+  overflow: hidden;
+  place-items: center;
+  border-radius: 50%;
+  color: rgba(36, 33, 43, 0.6);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.artist-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.artist-initial {
+  text-transform: uppercase;
+}
+
+.artist-card-info {
+  padding: 13px 14px 15px;
+  text-align: center;
+}
+
+.artist-card h3 {
+  overflow: hidden;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.artist-card-info p {
+  margin: 5px 0 0;
+  color: #686b75;
+  font-size: 11px;
+}
+
+@media (hover: hover) {
+  .service-card:hover,
+  .distribution-card:hover,
+  .artist-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 34px rgba(24, 27, 35, 0.2), 0 0 0 1px rgba(255, 48, 53, 0.25);
+  }
+
+  .service-card:hover .service-icon,
+  .distribution-card:hover .distribution-icon {
+    transform: translateY(-3px) rotate(-6deg) scale(1.1);
+    background: rgba(255, 48, 53, 0.14);
+  }
+
+  .distribution-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(255, 48, 53, 0.35);
+    box-shadow: 0 20px 38px rgba(24, 27, 35, 0.16), 0 0 0 1px rgba(255, 48, 53, 0.08);
+  }
+
+  .distribution-card:hover::before {
+    opacity: 1;
+  }
+
+  .artist-card:hover .artist-photo img {
+    transform: scale(1.1);
+  }
+
+  .partner-list li {
+    transition: transform 180ms ease, box-shadow 180ms ease, color 180ms ease;
+  }
+
+  .partner-list li:hover {
+    transform: translateY(-3px);
+    color: var(--red);
+    box-shadow: 0 6px 14px rgba(24, 27, 35, 0.12);
+  }
+}
+
+.service-icon,
+.distribution-icon {
+  transition: transform 220ms ease;
+}
+
+.distribution-section {
+  padding-block: 60px 74px;
+}
+
+.distribution-block + .distribution-block {
+  margin-top: 64px;
+}
+
+.distribution-heading {
+  margin-bottom: 32px;
+}
+
+.distribution-heading .section-eyebrow {
+  margin-bottom: 6px;
+}
+
+.distribution-heading h2 {
+  font-size: clamp(30px, 3vw, 38px);
+}
+
+.distribution-heading .section-intro {
+  font-size: 14px;
+}
+
+.distribution-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.distribution-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 250px;
+  padding: 22px 17px;
+  border: 1px solid rgba(255, 48, 53, 0.08);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.distribution-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0, rgba(255, 48, 53, 0.1), transparent 58%);
+  content: '';
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.distribution-icon {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  padding: 7px;
+  border-radius: 13px;
+  background: rgba(255, 48, 53, 0.08);
+  transition: transform 260ms ease, background 260ms ease;
+}
+
+.distribution-card h3 {
+  min-height: 42px;
+  margin-top: 13px;
+}
+
+.distribution-card h3 span {
+  display: inline-grid;
+  min-width: 24px;
+  height: 24px;
+  margin-right: 3px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--red);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.distribution-card p {
+  font-size: 13px;
+}
+
+.partner-list {
+  display: flex;
+  margin: 34px auto 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+}
+
+.partner-list li {
+  padding: 9px 13px;
+  border: 1px solid #e8e8ec;
+  border-radius: 999px;
+  color: #41444d;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.site-footer {
+  padding: 42px 0 20px;
+  color: #fff;
+  background: #080808;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.55fr 0.85fr;
+  gap: 50px;
+}
+
+.footer-grid h2 {
+  margin: 0 0 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.footer-services {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+  list-style: none;
+}
+
+.footer-services li,
+.footer-location,
+.footer-contact p,
+.footer-contact > a {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.dmca-badge {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 5px 9px;
+  border: 1px solid #aaa;
+  background: #333;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-location {
+  margin: 13px 0 0;
+}
+
+.footer-about {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  padding-top: 8px;
+  text-align: center;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-brand-mark {
+  color: var(--red);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.footer-brand > span:last-child {
+  display: grid;
+  text-align: left;
+}
+
+.footer-brand strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+}
+
+.footer-brand small {
+  color: #c9c9c9;
+  font-size: 8px;
+  letter-spacing: 0.6px;
+}
+
+.footer-about > p {
+  max-width: 600px;
+  margin: 25px 0 13px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.footer-social {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.footer-legal {
+  display: flex;
+  margin-top: 22px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.footer-contact {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: 10px;
+}
+
+.footer-contact h2 {
+  margin-bottom: 0;
+}
+
+.footer-contact > a,
+.footer-contact p {
+  margin: 0;
+}
+
+.made-in-india {
+  display: block;
+  margin-top: 14px;
+  padding: 15px 20px;
+  border: 1px solid #565656;
+  border-radius: 50%;
+  color: #dedede;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(-7deg);
+}
+
+.made-in-india small {
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 14px;
+  border-top: 1px solid #555;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  .service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .distribution-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 36px;
+  }
+
+  .footer-contact {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+  }
+
+  .footer-contact h2 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-container {
+    width: min(100% - 36px, 520px);
+  }
+
+  .services-section {
+    padding-block: 52px 60px;
+  }
+
+  .section-heading,
+  .artists-heading {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
+  }
+
+  .section-intro {
+    font-size: 14px;
+  }
+
+  .service-grid {
+    margin-top: 34px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .service-card {
+    min-height: 220px;
+    padding: 23px 15px;
+  }
+
+  .service-card h3,
+  .distribution-card h3 {
+    font-size: 14px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+  }
+
+  .artists-section {
+    padding-block: 38px;
+  }
+
+  .artists-heading {
+    margin-bottom: 25px;
+  }
+
+  .artists-heading p {
+    font-size: 14px;
+  }
+
+  .artist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .distribution-section {
+    padding-block: 48px;
+  }
+
+  .distribution-block + .distribution-block {
+    margin-top: 48px;
+  }
+
+  .distribution-heading {
+    margin-bottom: 24px;
+  }
+
+  .distribution-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .distribution-card {
+    min-height: 235px;
+    padding: 19px 13px;
+  }
+
+  .distribution-card p {
+    font-size: 12px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-about {
+    grid-row: 1;
+  }
+
+  .footer-contact {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .footer-contact h2 {
+    grid-column: auto;
+  }
+
+  .made-in-india {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .service-grid,
+  .distribution-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card,
+  .distribution-card {
+    min-height: auto;
+  }
+}
